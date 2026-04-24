@@ -1,0 +1,9 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int solution(int n, int k) {
+    k = max(k - (n / 10), 0);
+    return (n * 12000) + (k * 2000);
+}

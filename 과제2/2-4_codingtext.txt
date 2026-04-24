@@ -1,0 +1,28 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+vector<int> solution(vector<int> arr, vector<bool> flag) {
+    vector<int> answer;   
+    int index = static_cast<int>(arr.size());
+    
+    for (int i = 0; i < index; ++i)
+    {
+        if (flag[i]) {
+            int lp = arr[i] * 2;
+            for (int l = 0; l < lp; ++l) {
+                answer.push_back(arr[i]);
+            }
+        }
+        else /*(!flag[i])*/ {
+            int lp = arr[i];
+            for (int l = 0; l < lp; ++l) {
+                if (answer.empty()) break;
+                answer.pop_back();
+            }
+        }        
+    }
+    
+    return answer;
+}
